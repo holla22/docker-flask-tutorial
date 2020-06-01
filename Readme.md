@@ -25,7 +25,7 @@ source venv/bin/activate
 - add it to the following directory on the nginx container, /etc/nginx/conf.d/sites-available/
 - modify the include in /etc/nginx/nginx.conf to look like: include /etc/nginx/conf.d/sites-available/*.conf
 
-## By buying me Coffee or becoming a montly member you help me to do what I'm passionate about.
+## By buying me Coffee or becoming a monthly member you help me to do what I'm passionate about.
 * You’ll be notified by email when new members-only posts are published.
 * Support me on a monthly basis
 * Join my exclusive Discord chat server where you can chat with me personally and ask for help or get help from others on the server.
