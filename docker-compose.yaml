@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  db:
+    image: mysql:8.0.19
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data_python_flask:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: RandomRoot@213!
+      MYSQL_DATABASE:  flask_app
+      MYSQL_USER: flask_user
+      MYSQL_PASSWORD: RandomRoot@213!
+    ports:
+      - "33061:3306"
+
+  flask_app:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8003:8003"
+      - "4431:443"
+    restart: always
+
+  reverse_proxy:
+    depends_on:
+      - flask_app
+    container_name: reverse-proxy
+    hostname: reverse
+    image: nginx:1.18.0
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - nginx_data:/etc/nginx
+      - nginx_data:/etc/ssl/private
+
+volumes:
+    db_data_python_flask: {}
+    nginx_data: {}
