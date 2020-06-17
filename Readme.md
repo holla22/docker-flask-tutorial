@@ -1,6 +1,6 @@
 # Docker tutorial I created for Teachingyou.net
 
-[Docker Tutorial](https://teachingyou.net) - originally posted on Teachingyou.net (my website)
+[Docker Tutorial](https://teachingyou.net/docker-multi-container-flask-app/) - originally posted on Teachingyou.net (my website)
 
 ## Quick details below
 
